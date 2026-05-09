@@ -22,6 +22,9 @@ jobs:
 
       - name: Run Claude Code Action
         uses: anthropics/claude-code-action@v1
+        with:
+          # Hand the key directly to the action here:
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Keep the token here so it has permission to comment
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
